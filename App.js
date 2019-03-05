@@ -38,6 +38,6 @@ export default class App extends React.Component {
 
 	fetchData = () => {
 		this.setState({...this.setState({...this.state, isLoading: true})})
-		fetch(`http://www.reddit.com/r/${this.state.subName || 'all'}.json?raw_json=1&limit=25`).then(res => res.json()).then(res => this.setState({isLoading: false, items: res.data.children, subName: ''}))
+		fetch(`http://www.reddit.com/r/${this.state.subName || 'overwatch'}.json?raw_json=1&limit=35`).then(res => res.json()).then(res => this.setState({isLoading: false, items: res.data.children, subName: ''}))
 	}
 }

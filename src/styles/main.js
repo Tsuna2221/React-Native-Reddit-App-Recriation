@@ -47,7 +47,7 @@ const bgStyle = StyleSheet.create({
   bgColorMain:{backgroundColor: '#050505'},
   bgColorDiv:{backgroundColor: '#121213'},
   bgColorSearch:{backgroundColor: '#1A1A1B'},
-  bgColorAvatarPlaceholder: {backgroundColor: '#05a5d1'}
+  bgColorPlaceholder: {backgroundColor: '#05a5d1'}
 });
 
 const padding = (t, r, b, l) => {

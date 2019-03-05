@@ -5,7 +5,7 @@ import { alignStyle, textStyle, bgStyle, margin, padding, size } from './main'
 
 var {alignCenter, alignVer, alignHor} = alignStyle
 var {s_18, w_medium, w_regular, c_white, s_16} = textStyle
-var {bgColorSearch, bgColorAvatarPlaceholder, bgColorDiv} = bgStyle
+var {bgColorSearch, bgColorPlaceholder, bgColorDiv} = bgStyle
 
 const style_header = {
     searchContainer: [
@@ -19,7 +19,7 @@ const style_header = {
         profileAvatar: [
             size(30, 30), 
             margin(0, 20, 0, 10), 
-            bgColorAvatarPlaceholder,
+            bgColorPlaceholder,
             
             {
                 borderRadius: 5,

@@ -23,14 +23,32 @@ const style_feed = {
         ],
 
     mainContainer: [
+
     ],
         postContainer: [
             bgColorDiv,
-            padding(0, 15),
             {
                 marginBottom: 10
             }
         ],
+
+            detailsContainer: [
+                margin(8, 0), 
+                {
+                    flexDirection: "row", 
+                    alignItems: 'center'
+                }
+            ],
+
+            subIco: [
+                size(36, 36), 
+                bgColorPlaceholder, 
+                {
+                    borderRadius: 100, 
+                    marginRight: 8
+                }
+            ],
+
             postTitle: [
                 s_18, 
                 w_regular, 
@@ -44,6 +62,21 @@ const style_feed = {
                 {
                     alignSelf: 'stretch',
                     marginTop: 10,
+                }
+            ],
+
+            flair:[
+                {
+                    alignSelf: 'flex-start', 
+                    borderRadius: 3
+                }
+            ],
+
+            alignSocial: [
+                {
+                    flex: 1, 
+                    alignSelf: 'stretch', 
+                    justifyContent: 'center'
                 }
             ]
 };
