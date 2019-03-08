@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, Button, TextInput, FlatList } from 'react-native';
+import { Text, View, Image, Button, TextInput, FlatList, TouchableHighlight } from 'react-native';
 
 //Styles
 import { style_header } from '../styles/Header'
@@ -9,8 +9,8 @@ export default class Header extends React.Component {
 		return(
 			<View style={{flexDirection: 'column'}}>
 				<View style={style_header.searchContainer}>
-					<View style={style_header.profileAvatar}></View>
-					<TextInput style={style_header.searchInput} placeholder="Search" placeholderTextColor="#818384"></TextInput>
+					<TouchableHighlight onPress={() => this.props.fetchData(this.state.text)}><View style={style_header.profileAvatar}></View></TouchableHighlight>
+					<TextInput onChangeText={(text) => this.setState({text})} style={style_header.searchInput} placeholder="Search" placeholderTextColor="#818384"></TextInput>
 				</View>
 
 				<View style={style_header.sectionContainer}>
@@ -19,5 +19,9 @@ export default class Header extends React.Component {
 				</View>
 			</View>
 		);
+	}
+
+	state = {
+
 	}
 }

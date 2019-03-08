@@ -44,7 +44,7 @@ export default class Feed extends React.Component {
 										</View>
 									)	
 								}else
-								if(domain === 'v.redd.it'){
+								if(domain === 'v.redd.ite'){
 									return(
 										<View key={item.data.name} style={style_feed.postContainer}>
 											{this.drawDetails(subreddit, author, domain)}
@@ -67,6 +67,18 @@ export default class Feed extends React.Component {
 										{this.drawSocialInt(score, num_comments)}
 									</View>
 								)	
+							}
+
+							if(domain === "gfycat.com"){
+								return(
+									<View key={item.data.name} style={style_feed.postContainer}>
+										{this.drawDetails(subreddit, author, domain)}
+										<Text style={[style_feed.postTitle, margin(0, 15)]}>{title}</Text>
+										{this.drawFlair(link_flair_text, link_flair_background_color)}
+										<Image source={{uri: secure_media.oembed.thumbnail_url}} resizeMode="cover" style={[style_feed.postImage, {width: Dimensions.get('window').width, height: secure_media.oembed.height}]}></Image>
+										{this.drawSocialInt(score, num_comments)}
+									</View>
+								)
 							}
 						}}/>
 					</ScrollView> 

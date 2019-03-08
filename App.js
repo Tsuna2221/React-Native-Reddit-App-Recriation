@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
 		return(
 			<View style={[bgStyle.bgColorMain, {flex:1}]}>
-				<Header/>
+				<Header fetchData={this.fetchData}/>
 				<Feed posts={this.state.items}/>
 			</View>
 		);
@@ -36,8 +36,8 @@ export default class App extends React.Component {
 
 	componentDidMount = () => this.fetchData()
 
-	fetchData = () => {
+	fetchData = (subName) => {
 		this.setState({...this.setState({...this.state, isLoading: true})})
-		fetch(`http://www.reddit.com/r/${this.state.subName || 'overwatch'}.json?raw_json=1&limit=35`).then(res => res.json()).then(res => this.setState({isLoading: false, items: res.data.children, subName: ''}))
+		fetch(`http://www.reddit.com/r/${subName || 'all'}.json?raw_json=1&limit=35`).then(res => res.json()).then(res => this.setState({isLoading: false, items: res.data.children, subName: ''}))
 	}
 }
